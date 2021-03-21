@@ -7,9 +7,14 @@
 // import CardContent from "@material-ui/core/CardContent";
 // import Button from "@material-ui/core/Button";
 // import Typography from "@material-ui/core/Typography";
+// import {Grid} from "@material-ui/core";
 // import "./styles.css";
 //
 // const useStyles = makeStyles({
+//   gridContainer: {
+//     paddingLeft: "40px",
+//     paddingRight: "40px"
+//   },
 //   root: {
 //     minWidth: 200
 //   },
@@ -26,16 +31,16 @@
 //   }
 // });
 //
-// export default function OutlinedCard() {
+// function App() {
 //   const [colleges, setcolleges] = useState(null);
 //   const classes = useStyles();
 //
 //   const fetchData = async () => {
-//     const responses = await axios.get(
+//     const response = await axios.get(
 //       "/colleges"
 //     );
 //
-//     setcolleges(responses.data);
+//     setcolleges(response.data);
 //   };
 //
 //   return (
@@ -57,6 +62,8 @@
 //         const cleanedDate = new Date(college.Timestamp).toDateString();
 //
 //         return (
+//           <Grid container spacing = {4} className = {classes.gridContainer} justify = "center" >
+//             <Grid item xs = {12} sm = {6} md = {4} >
 //               <Card className = {classes.root} variant = "outlined" >
 //                 <CardContent >
 //                   <div className = "college" key = {index} >
@@ -81,7 +88,9 @@
 //                 <CardActions >
 //                   <Button size = "small" > View In Detail < /Button>
 //                 </CardActions>
-//             </Card>
+//               </Card>
+//             </Grid>
+//           </Grid>
 //         );
 //       })
 //     }
@@ -89,3 +98,13 @@
 //   </div>
 //   );
 // }
+//
+// const rootElement = document.getElementById("root");
+// ReactDOM.render( < App / > , rootElement);
+// import React from "react";
+// import ReactDOM from "react-dom";
+//
+// import App from "./App";
+//
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<App />, rootElement);
