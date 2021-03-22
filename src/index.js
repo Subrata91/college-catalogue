@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom";
-import { Router, Link } from "@reach/router"
+import { BrowserRouter as Router } from 'react-router-dom';
 import axios from "axios";
 import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -9,6 +9,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import {Grid} from "@material-ui/core";
+import Routes from './Routes';
+import history from "./history";
 import "./styles.css";
 
 const useStyles = makeStyles({
@@ -32,7 +34,7 @@ const useStyles = makeStyles({
   }
 });
 
-function App() {
+export default function App() {
   const [colleges, setcolleges] = useState(null);
   const classes = useStyles();
 
@@ -63,7 +65,6 @@ function App() {
         const cleanedDate = new Date(college.Timestamp).toDateString();
 
         return (
-          // <Grid container spacing = {4} className = {classes.gridContainer} justify = "center" >
             <Grid item xs = {12} sm = {6} md = {4} >
               <Card className = {classes.root} variant = "outlined" >
                 <CardContent >
@@ -87,11 +88,10 @@ function App() {
                   </div>
                 </CardContent>
                 <CardActions >
-                  <Button size = "small" ><Link to="/SingleCollege">  View In Detail </Link>< /Button>
+                  <Button size = "small" onClick={() => history.push('/SingleCollege')} > View In Detail < /Button>
                 </CardActions>
               </Card>
             </Grid>
-          // </Grid>
         );
       })
     }
@@ -101,4 +101,7 @@ function App() {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render( < App / > , rootElement);
+ReactDOM.render(
+  <Router>
+    < App / >
+  </Router>, rootElement);
