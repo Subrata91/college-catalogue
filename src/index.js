@@ -64,7 +64,7 @@ function App() {
         /* Fetch data from API consisting info regarding an individual college */
         const fetchData2 = async () => {
           const response2 = await axios.get(
-            `{http:localhost:7000/college/${college._id}}`
+            `/college/${college._id}`
           );
           setsingleCollege(response2.data);
         };
@@ -94,7 +94,7 @@ function App() {
                   </div>
                 </CardContent>
                 <CardActions >
-                  <Button size = "small" >Details< /Button>
+                  <Button size = "small" onClick = {fetchData2}>Details< /Button>
                   <div>
                   /* Mapping through each info of an individual college viz. key-value pairing */
                   {singleCollege && singleCollege.map((institute, index2) => {
