@@ -12,8 +12,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import {Grid} from "@material-ui/core";
-import "../public/styles.css";
-import SingleCollege from "../Single-College/SingleCollege.jsx";
+import SingleCollege from "./SingleCollege.js";
+import "./styles.css";
 
 // A local stylesheet being defined in a constant variable named, useStyles
 const useStyles = makeStyles({
@@ -51,13 +51,6 @@ function Home() {
     setcolleges(response.data); // "setcolleges" setting the acquired list of colleges into "colleges".
   };
 
-  // The area of confusion that I wish to ask about
-  const handleClick = (id) => {
-    return (<div>
-        <SingleCollege key = {id} />
-      </div>);
-  }
-
   /* The rendering of the college list in the form of React cards where each college is represented in the form of product cards.
   Each card will display the college name and a few other credentials related to the college */
   return (
@@ -65,7 +58,7 @@ function Home() {
     <h1 > List of Colleges < /h1>
     <h2 > Fetch a list from an API and display it < /h2>
 
-    {/* Fetch data from API */ }
+    {/* Fetch data from API */}
     <div >
     <button className = "fetch-button" onClick = {fetchData} >
     Fetch Data
@@ -102,8 +95,8 @@ function Home() {
                   </div>
                 </CardContent>
                 <CardActions >
-                  <Link to = "/singlecollege" style={{ textDecoration: 'none' }}>
-                    <Button size = "small" onClick = {handleClick(college._id)}>View In Detail></Button>
+                  <Link to = {`/singlecollege/${college._id}`} style={{ textDecoration: 'none' }}>
+                    <Button size = "small">View In Detail></Button>
                   </Link>
                 </CardActions>
               </Card>

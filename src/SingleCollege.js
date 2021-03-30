@@ -3,30 +3,32 @@ and will display the full information regarding the college. */
 
 // Importing of the required libraries
 import React, {useState, useEffect} from "react";
-import ReactDOM from "react-dom";
-import "../public/styles.css";
+import "./styles.css";
 
 // This function will run and display the individual college page
-function SingleCollege(props){
+function SingleCollege({ match }){
   useEffect(() => {   // Calling the data-fetching function through "useEffect". It is actually the Effect Hook function of React.
-    fetchItems();   // The function that will fetch the complete data about a college.
+    fetchItem();   // The function that will fetch the complete data about a college.
+    console.log(match);
   },[]);
 
   /* The useState function is also being used here. It will push a single college object and its parameters into the "items" via
   the "setItems" fucntion */
-  const [items, setItems] = useState({});
+  const [item, setItem] = useState({});
 
   // The constant variable "fetchItems" holds an asynchronous function where it is fetching data using the link provided in the paranthesis.
-  const fetchItems = async () => {
-    const data = await fetch(`/college/${props.id}`);
+  const fetchItem = async () => {
+    const data = await fetch(`/college/${match.params._id}`);
     const items = await data.json();  // Conversion of the data gathered from the API link into JSON data.
-    setItems(items);  // Setting the furnished data into "items" as previously stated.
+    setItem(items);  // Setting the furnished data into "items" as previously stated.
+
+    console.log(items);
   };
 
   // Now that the entire dataset of a college has been gathered, we are rendering it according to our fashion.
+  // {item.map(info => (
   return(
     <div className="App">
-    {items.map(item => (
       <p>
       <strong>ID:</strong>{item._id}
       <br />
@@ -60,7 +62,6 @@ function SingleCollege(props){
       <br />
       <strong>Contact Details:</strong> {item.Contact}
       </p>
-    ))}
     </div>
   );
 }
