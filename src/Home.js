@@ -96,7 +96,7 @@ function Home() {
                 </CardContent>
                 <CardActions >
                   <Link to = {`/singlecollege/${college._id}`} target="_blank" style={{ textDecoration: 'none' }}>
-                    <Button size = "small" onClick = {() => (<SingleCollege id={college._id} />)}>View In Detail</Button>
+                    <Button size = "small">View In Detail</Button>
                   </Link>
                 </CardActions>
               </Card>

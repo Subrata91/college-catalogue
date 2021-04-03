@@ -17,7 +17,7 @@ function SingleCollege(props){
 
   // The constant variable "fetchItems" holds an asynchronous function where it is fetching data using the link provided in the paranthesis.
   const fetchItem = async () => {
-    const data = await fetch(`/college/${props.id}`);
+    const data = await fetch(`/college/${props.match.params.id}`);
     const items = await data.json();  // Conversion of the data gathered from the API link into JSON data.
     setItem(items);  // Setting the furnished data into "items" as previously stated.
   };
