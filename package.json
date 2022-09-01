@@ -1,23 +1,36 @@
 {
-  "homepage": "https://github.com/Subrata91/college-catalogue",
+  "homepage": "https://Subrata91.github.io/CollegeCatalogue",
   "name": "college-catalogue",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@reach/router": "^1.3.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "history": "^5.0.0",
     "http-proxy-middleware": "^1.0.6",
+    "mdbreact": "^5.0.2",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-fetch": "0.0.9",
+    "react-flag-icon-css": "^1.0.25",
+    "react-icons": "^4.2.0",
     "react-matches": "^0.2.1",
+    "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.0",
+    "react-select-country-list": "^2.2.3",
+    "styled-components": "^5.2.3",
     "use-history": "^1.4.1",
     "web-vitals": "^1.0.1"
   },
@@ -46,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

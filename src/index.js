@@ -4,6 +4,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import App from "./App.js";
 
 const rootElement = document.getElementById("root"); // This constant variable stores the "root" element present in the HTML file of this app.

@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/CollegeDb", {
+mongoose.connect("mongodb://localhost:27017/NewCollegeDbb", {
   useNewUrlParser: true
 });
 
@@ -21,7 +21,7 @@ const CollegeSchema = {
   _id: mongoose.Schema.ObjectId,
 };
 
-const College = mongoose.model("College", CollegeSchema, 'myCollection');
+const College = mongoose.model("College", CollegeSchema, 'CollegeCollection');
 
 // Requests targetting all the colleges
 

@@ -1,75 +1,272 @@
-* {
-  box-sizing: border-box;
+/* Importing items viz. CDN */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+/* Body of the application */
+*
+{
+    font-family: 'Sora', sans-serif;
+
+    box-sizing: border-box;  margin: 0;  padding: 0;
 }
 
-.App {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  padding-top: 80px;
-}
-
-.App > h1 {
-  margin-bottom: 5px;
-}
-
-.App > h2 {
-  margin-top: 5px;
-  opacity: 0.7;
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-.fetch-button {
-  min-width: 150px;
-  margin-bottom: 30px;
-  padding: 15px;
-  font-size: 1em;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgb(54, 202, 165);
-  border: none;
-  color: rgb(15, 66, 54);
-  transition: all 0.5s;
-}
-
-.fetch-button:hover {
-  background-color: rgb(40, 209, 209);
-}
-
-.colleges {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* .college {
-  background: #fff;
-  position: relative;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 10px;
-  width: 47%;
-  color: #333;
-  flex-basis: width;
-  background-color: rgb(165, 230, 230);
-} */
-
-.college h3 {
-  margin-bottom: 5px;
-  font-size: 1rem;
-  opacity: 0.7;
-}
-
-.college h2 {
-  margin-top: 5px;
-  margin-bottom: 30px;
-  font-size: 1.5rem;
-}
-
-.details {
-  text-align: center;
-}
-
-.single-college{
-    font-family: Arial, Helvetica, sans-serif;
+/* Application that fetches college data from the API */
+.App
+{
     text-align: center;
+}
+
+/* The "fetch" button */
+.fetch-button
+{
+    font-size: 1em;
+
+    min-width: 150px;  margin-bottom: 30px;  padding: 15px;  cursor: pointer;  transition: all .5s; color: rgb(15, 66, 54);  border: none;  border-radius: 5px;  background-color: rgb(54, 202, 165);
+}
+
+.fetch-button:hover
+{
+    background-color: rgb(40, 209, 209);
+}
+
+/* Each college card */
+.colleges
+{
+    display: flex;  flex-wrap: wrap;
+}
+
+.college h3
+{
+    font-size: 1rem;
+
+    margin-bottom: 5px;  opacity: .7;
+}
+
+.college h2
+{
+    font-size: 1.5rem;  margin-top: 5px;  margin-bottom: 30px;
+}
+
+/* Whole details of a single college */
+.details
+{
+    text-align: center;
+}
+
+/* Navbar of the home-page */
+.color-nav
+{
+    background-color: #f7f3e9;
+}
+
+.brand-name
+{
+    font-family: 'Dela Gothic One', cursive;
+}
+
+.second-navbar
+{
+    position: absolute;
+
+    width: 100%; box-shadow: 0 5px 13px;
+}
+
+.title-image
+{
+    position: relative;
+    z-index: -1;
+}
+
+/* The search box */
+.search-box
+{
+    position: absolute;
+    top: 50%;  left: 50%;
+
+    height: 60px; margin-top: 60px; padding: 10px; transform: translate(-50%, -50%);  border-radius: 40px;  background: #fff;
+}
+
+.search-box:hover > .search-txt
+{
+    width: 500px; padding: 0 6px;
+}
+
+.search-box:hover > .search-btn
+{
+    color: black;  background: white;
+}
+
+.search-btn
+{
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    transition: .4s;
+
+    color: #000;
+    color: white;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.search-txt
+{
+    font-size: 16px;
+    line-height: 40px;
+
+    float: left;
+
+    width: 0;
+    padding: 0;
+
+    transition: .4s;
+
+    color: white;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* The categories section */
+#categories
+{
+    display: flex;
+    justify-content: center;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.container
+{
+    position: absolute; display: flex; align-items: center; flex-wrap: wrap; justify-content: center; width: 100%;  margin-top: 100px; padding-top: 50px; padding-bottom: 80px;
+
+    box-shadow: 0 15px 10px rgba(0, 0, 0, .2);
+}
+
+.container .card
+{
+    position: relative; overflow: hidden; width: 200px; height: 320px; margin: 20px 20px 0 20px;
+
+    transition: .5s; border-radius: 20px; background: #fff; box-shadow: 0 15px 10px rgba(0, 0, 0, .2);
+}
+
+.container .card .circle
+{
+    position: relative; width: 100%; height: 100%; text-align: center; background: #000; clip-path: circle(180px at center 0);
+}
+
+.container .card .content
+{
+    position: absolute;  bottom: 10px; padding: 20px 0; text-align: center;
+}
+
+/* The Testimonials Carousel */
+#testimonials
+{
+    display: flex;  justify-content: center;  box-sizing: border-box;  min-height: 100vh; padding-top: 20px;
+}
+
+.testimonial-container
+{
+    position: absolute; display: flex; align-items: center; flex-wrap: wrap; justify-content: center; width: 100%;  margin-top: 80px; padding-top: 20px; padding-bottom: 80px; box-shadow: 0 15px 10px rgba(0, 0, 0, .2);
+}
+
+.carousel-root
+{
+    width: 64% !important;  margin: auto !important;  margin-top: 3% !important;
+}
+
+.carousel .slide
+{
+    height: 100%;     color: black;
+    background: #fff !important;
+}
+
+.carousel .slide img
+{
+    width: 139px !important;  border-radius: 50%;
+}
+
+.my-carousel
+{
+    width: 54%;  height: 286px;     margin-top: -6%;  margin-right: auto;  margin-left: auto;  padding-top: 6%;  padding-right: 5%;  padding-bottom: 8%;  padding-left: 5%;  border: 1px solid #ddd;
+    background: #fafafa;
+}
+
+.carousel .control-dots
+{
+    bottom: 5% !important;  padding-left: 5px !important;  outline: 0;
+}
+
+.my-carousel h3
+{
+    font-size: 17px;     font-weight: 100;     font-weight: 600;  margin-bottom: 4px;  letter-spacing: .2px;  text-transform: uppercase;
+
+    color: #222;
+}
+
+.my-carousel h4
+{
+    font-size: 14px;     font-weight: 500;  margin-top: 0;  padding-top: 0;
+
+    text-transform: uppercase;  color: #787878;
+}
+
+.my-carousel p
+{
+    font-family: sans-serif;  font-size: 15px;
+    font-weight: 100 !important;  line-height: 29px !important;  max-height: 67px;     color: #222;
+}
+
+.my-carousel p:before
+{
+    font-family: monospace;  font-size: 26px;  font-weight: 100;  content: '“';  color: #aaa;
+}
+
+.my-carousel p:after
+{
+    font-family: monospace;  font-size: 26px;  font-weight: 100;  line-height: 0;  content: '”';  color: #aaa;
+}
+
+.carousel .control-dots .dot
+{
+    outline: 0;     background: #454545 !important;
+    box-shadow: none !important;
+}
+
+.carousel.carousel-slider .control-arrow
+{
+    position: absolute;  top: 35% !important;     height: 50px !important;
+
+    background: #000 !important;
+}
+
+@media only screen and (max-width: 934px)
+{
+    .carousel-root
+    {
+        width: 93% !important;  margin: auto !important;  outline: 0;
+    }
+
+    .carousel.carousel-slider .control-arrow
+    {
+        display: none !important;
+    }
+    .my-carousel
+    {
+        width: 88%;  height: 269px;         margin-top: -9%;  margin-right: auto;  margin-left: auto;  padding-top: 8%;  padding-right: 5%;  padding-bottom: 12.5%;  padding-left: 5%;  border: 1px solid #ddd;
+        background: #fafafa;
+    }
+
+    .carousel .slide img
+    {
+        width: 24% !important;  border-radius: 50%;
+    }
 }
