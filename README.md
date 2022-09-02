@@ -18,3 +18,7 @@ The Individual college page:
 ![image](https://user-images.githubusercontent.com/40858535/188166669-aef71464-9829-4016-bc45-59bfd92f7351.png)
 ![image](https://user-images.githubusercontent.com/40858535/188166758-e7a86ffd-dddf-4709-a050-f8fc991b089d.png)
 ![image](https://user-images.githubusercontent.com/40858535/188166846-0fe1a83a-810e-4be9-8eb1-42334c4595a2.png)
+
+
+The backend database from where information is being fetched to be shown in the college list page:
+![image](https://user-images.githubusercontent.com/40858535/188167338-7df5a286-9a82-4553-9f72-ffd81672f828.png)
